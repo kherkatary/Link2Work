@@ -1,0 +1,68 @@
+/* components/hero.module.scss */
+
+.hero {
+  position: relative;
+  // background: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2488&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+  background-color: rgb(0, 0, 0,0.1);
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Black color with 60% opacity */
+  z-index: 1; /* Ensure the overlay is behind the content */
+}
+
+.heroContent {
+  text-align: center;
+  color: #fff;
+  z-index: 2; /* Ensure the content is on top of the overlay */
+}
+
+.heroTitle {
+  font-size: 3em;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.heroSubtitle {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  animation: fadeInUp 1s ease-in-out 0.5s;
+}
+
+.heroButton {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #fff;
+  background-color: #3498db;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.heroButton:hover {
+  background-color: #2980b9;
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

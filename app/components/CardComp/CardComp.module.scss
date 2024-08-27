@@ -1,0 +1,61 @@
+/* components/card.module.scss */
+
+.card {
+    // background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgb(255, 255, 255,0.5);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .cardImage {
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+        @media screen and (max-width:800px) {
+            display: none;
+            
+        }
+    }
+    
+    .cardContent {
+        padding: 16px;
+        background: rgba( 255, 255, 255, 0.25 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        // border-radius: 10px;
+        // border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+        .active{
+            color: rgb(0, 255, 0);
+        }
+    }
+    
+    .cardTitle {
+        font-size: 1.5em;
+        margin: 0 0 10px;
+    }
+    
+    .cardDescription {
+        font-size: 1em;
+        color: #555;
+    }
+}
+
+
+
+/* Ensure responsiveness */
+@media (min-width: 600px) {
+    .card {
+        width: 100%;
+    }
+}
